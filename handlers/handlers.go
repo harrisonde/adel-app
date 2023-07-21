@@ -12,6 +12,9 @@ type Handlers struct {
 	Models data.Models
 }
 
+// Add your Handlers here
+// ...
+
 func (h *Handlers) Home(w http.ResponseWriter, r *http.Request) {
 	err := h.render(w, r, "home", nil, nil)
 	if err != nil {

@@ -14,9 +14,11 @@ var db *sql.DB
 var upper db2.Session
 
 type Models struct {
-	// Models inserted here (and in New fn)
-	// are accessible throughout the entire application
+	// Insert Models here (and in New fn)
+	// All Models are accessible throughout the entire application
 	// e.g., Users User
+	// ...
+
 }
 
 // New-up the models for use by the package
@@ -33,9 +35,11 @@ func New(databasePool *sql.DB) Models {
 	}
 
 	return Models{
-		// Add your inserted models here, these are the models
-		// you add in your models struct
+		// Add all inserted Models here.
+		// These are the models you add in your Models struct
 		// e.g., Users:  User{},
+		// ...
+
 	}
 }
 
