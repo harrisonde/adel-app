@@ -4,7 +4,8 @@
 .env.production
 .idea
 /.vscode
-coverage.out
+/db-data
 /vendor
+coverage.out
 npm-debug.log
 yarn-error.log
