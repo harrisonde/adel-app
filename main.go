@@ -27,16 +27,19 @@ func main() {
 	a.App.ErrorLog.Println(err)
 }
 
+/*
+|--------------------------------------------------------------------------
+| Graceful Termination
+|--------------------------------------------------------------------------
+|
+| Here is where the wait group is invoked and all items in that were
+| registered ask the application to wait until each task for the is done.
+| These tasks will block the application until they are complete. For
+| example, the application to wait until we have finished sending mail,
+| add the mail to wg (i.e., wait group) and when complete call wg.Done()
+|
+*/
 func (a *application) shutdown() {
-	// put all clean up tasks here
-	// ...
-	// TODO:
-	// For example, we might ask the application to wait until
-	// we have finished sending email out. To get that done
-	// add something to the wg and when it is finished sending
-	// say wg.done();
-
-	// block until the wait group is empty
 	a.wg.Wait()
 }
 

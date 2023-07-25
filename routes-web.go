@@ -12,8 +12,15 @@ func (a *application) WebRoutes() http.Handler {
 
 	r.Route("/", func(mux chi.Router) {
 
-		// Add Web Routes here
-		// ...
+		/*
+		|--------------------------------------------------------------------------
+		| Web Routes
+		|--------------------------------------------------------------------------
+		|
+		| Here is where you can add your web routes for the application. These
+		| routes are loaded by the router.
+		|
+		*/
 
 		r.Get("/", a.Handlers.Home)
 

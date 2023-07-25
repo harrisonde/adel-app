@@ -13,15 +13,20 @@ import (
 var db *sql.DB
 var upper db2.Session
 
-type Models struct {
-	// Insert Models here (and in New fn)
-	// All Models are accessible throughout the entire application
-	// e.g., Users User
-	// ...
+/*
+|--------------------------------------------------------------------------
+| Models
+|--------------------------------------------------------------------------
+|
+| Here is where you can insert you models for the application. These
+| models are accessible throughout the entire application. For example
+| you may insert "Users User" here. You will need to return your newly
+| created models in the return "Users: User{}" function too!
+|
+*/
 
-}
+type Models struct{}
 
-// New-up the models for use by the package
 func New(databasePool *sql.DB) Models {
 	db = databasePool
 
@@ -34,13 +39,7 @@ func New(databasePool *sql.DB) Models {
 		// Do nothing as we might no have a database
 	}
 
-	return Models{
-		// Add all inserted Models here.
-		// These are the models you add in your Models struct
-		// e.g., Users:  User{},
-		// ...
-
-	}
+	return Models{}
 }
 
 // Support different DB ID return types

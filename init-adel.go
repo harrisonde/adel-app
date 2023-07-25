@@ -16,7 +16,8 @@ func initApplication() *application {
 		log.Fatal(err)
 	}
 
-	a := &adel.Adel{} // init Adel with reference to Adel
+	// init Adel with reference to Adel
+	a := &adel.Adel{}
 	err = a.New(path)
 	if err != nil {
 		log.Fatal(err)

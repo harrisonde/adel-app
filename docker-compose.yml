@@ -53,6 +53,7 @@ services:
       MINIO_ROOT_PASSWORD: password
     volumes:
       - ./db-data/minio/:/mnt/data/
+  
   # mariadb:
   #   image: 'mariadb:10.6'
   #   ports:
