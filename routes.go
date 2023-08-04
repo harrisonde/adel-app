@@ -7,13 +7,28 @@ import (
 )
 
 func (a *application) routes() *chi.Mux {
-	// Middleware must come before any routes
+	/*
+	|--------------------------------------------------------------------------
+	| Global Middleware
+	|--------------------------------------------------------------------------
+	|
+	| Here is where you can add your global Middleware for the application.
+	| These middleware are called on each request.
+	|
+	*/
 
-	// Static Routes
+
+	
+	/*
+	|--------------------------------------------------------------------------
+	| Static Routes
+	|--------------------------------------------------------------------------
+	|
+	| Here is where you can add your static routes for the application.
+	|
+	*/
 	fileServer := http.FileServer(http.Dir("./public"))
 	a.App.Routes.Handle("/public/*", http.StripPrefix("/public", fileServer))
-
-	// Mount Web and API routes
 	a.App.Routes.Mount("/", a.WebRoutes())
 	a.App.Routes.Mount("/api", a.ApiRoutes())
 

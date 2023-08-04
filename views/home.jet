@@ -1,6 +1,6 @@
 {{extends "./layouts/base.jet"}}
 
-{{block browserTitle()}}Adel{{end}}
+{{block browserTitle()}}Adele{{end}}
 
 {{block css()}}
 

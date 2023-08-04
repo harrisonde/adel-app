@@ -1,9 +1,9 @@
 ---
 development:
-  dialect:
-  database:
-  user:
-  password:
-  host:
-  port:
+  dialect: {{ env "DATABASE_TYPE" }}
+  database: {{ env "DATABASE_NAME" }}
+  user: {{ env "DATABASE_USER" }}
+  password: {{ env "DATABASE_PASSWORD"}}
+  host: {{ env "DATABASE_HOST" }}
+  port: {{ env "DATABASE_PORT"}}
   pool: 5

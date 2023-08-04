@@ -13,19 +13,21 @@ import (
 var db *sql.DB
 var upper db2.Session
 
-/*
-|--------------------------------------------------------------------------
-| Models
-|--------------------------------------------------------------------------
-|
-| Here is where you can insert you models for the application. These
-| models are accessible throughout the entire application. For example
-| you may insert "Users User" here. You will need to return your newly
-| created models in the return "Users: User{}" function too!
-|
-*/
+type Models struct{
+	/*
+	|--------------------------------------------------------------------------
+	| Models
+	|--------------------------------------------------------------------------
+	|
+	| Here is where you can insert you models for the application. These
+	| models are accessible throughout the entire application. For example
+	| you may insert "Users User" here. You will need to return your newly
+	| created models in the return "Users: User{}" function too!
+	|
+	*/
 
-type Models struct{}
+	
+}
 
 func New(databasePool *sql.DB) Models {
 	db = databasePool
