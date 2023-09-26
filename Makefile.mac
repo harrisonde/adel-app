@@ -2,14 +2,14 @@ BINARY_NAME=adelApp
 
 build:
 	@go mod vendor
-	@echo "Building adel..."
+	@echo "Building adele..."
 	@go build -o tmp/${BINARY_NAME} .
-	@echo "adel built!"
+	@echo "adele built!"
 
 run: build
-	@echo "Starting adel..."
+	@echo "Starting adele..."
 	@./tmp/${BINARY_NAME} &
-	@echo "adel started!"
+	@echo "adele started!"
 
 clean:
 	@echo "Cleaning..."
@@ -25,8 +25,8 @@ test:
 start: run
 
 stop:
-	@echo "Stopping adel..."
+	@echo "Stopping adele..."
 	@-pkill -SIGTERM -f "./tmp/${BINARY_NAME}"
-	@echo "Stopped adel!"
+	@echo "Stopped adele!"
 
 restart: stop start

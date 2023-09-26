@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"myapp/cmd"
 	"myapp/data"
 	"myapp/handlers"
 	"myapp/middleware"
@@ -33,10 +34,15 @@ func initApplication() *application {
 		App: a,
 	}
 
+	myCommands := &cmd.Commands{
+		App: a,
+	}
+
 	app := &application{
 		App:        a,
 		Handlers:   myHandlers,
 		Middleware: myMiddleware,
+		Commands:   myCommands,
 	}
 
 	// Add our application routes to the default routes
