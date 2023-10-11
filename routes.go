@@ -8,24 +8,23 @@ import (
 
 func (a *application) routes() *chi.Mux {
 	/*
-	|--------------------------------------------------------------------------
-	| Global Middleware
-	|--------------------------------------------------------------------------
-	|
-	| Here is where you can add your global Middleware for the application.
-	| These middleware are called on each request.
-	|
+		|--------------------------------------------------------------------------
+		| Global Middleware
+		|--------------------------------------------------------------------------
+		|
+		| Here is where you can add your global Middleware for the application.
+		| These middleware are called on each request.
+		|
 	*/
+	a.App.Routes.Use(a.Middleware.CheckForMaintenanceMode)
 
-
-	
 	/*
-	|--------------------------------------------------------------------------
-	| Static Routes
-	|--------------------------------------------------------------------------
-	|
-	| Here is where you can add your static routes for the application.
-	|
+		|--------------------------------------------------------------------------
+		| Static Routes
+		|--------------------------------------------------------------------------
+		|
+		| Here is where you can add your static routes for the application.
+		|
 	*/
 	fileServer := http.FileServer(http.Dir("./public"))
 	a.App.Routes.Handle("/public/*", http.StripPrefix("/public", fileServer))
