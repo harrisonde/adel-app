@@ -16,7 +16,6 @@ func (a *application) routes() *chi.Mux {
 		| These middleware are called on each request.
 		|
 	*/
-	a.App.Routes.Use(a.Middleware.CheckForMaintenanceMode)
 
 	/*
 		|--------------------------------------------------------------------------

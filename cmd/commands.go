@@ -33,10 +33,6 @@ func (c *Commands) Execute(arg1, arg2, arg3 string, options []string) string {
 		return c.Inspire()
 	case "route":
 		return c.List()
-	case "oauth":
-		if arg2 == "client" {
-			return c.doCreateOauthClient(arg1, arg2, arg3)
-		}
 	}
 	return c.Help()
 }

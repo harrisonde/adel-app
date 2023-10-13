@@ -67,24 +67,39 @@ type RPCServer struct {
 }
 
 func (r *RPCServer) MaintenanceMode(inMaintenanceMode bool, resp *string) error {
-	if inMaintenanceMode {
-		maintenanceMode = true
-		*resp = "Server in maintenance mode"
-	} else {
-		maintenanceMode = false
-		*resp = "Server live!"
-	}
+	res := r.App.setMaintenanceMode(inMaintenanceMode)
+	*resp = "server is " + res
+
 	return nil
 }
 
-func (r *RPCServer) Command(command string, resp *string) error {
-	*resp = r.App.Commands.Execute(command)
+func (a *application) setMaintenanceMode(inMaintenanceMode bool) string {
+	if inMaintenanceMode {
+		a.App.MaintenanceMode = true
+		return "down"
+	} else {
+		a.App.MaintenanceMode = false
+		return "up"
+	}
+}
+
+func (r *RPCServer) Command(args []string, resp *string) error {
+
+	if len(args) != 4 {
+		return errors.New("invalid arguments passed to rpc server in command")
+	}
+
+	arg1 := args[0]
+	arg2 := args[1]
+	arg3 := args[2]
+	options := strings.Split(args[3], ",")
+
+	*resp = r.App.Commands.Execute(arg1, arg2, arg3, options)
 	return nil
 }
 
 func (a *application) listenRPC() {
 
-	fmt.Println("listenRPC called")
 	a.App.InfoLog.Println("os.Getenv RPC_PORT:", os.Getenv("RPC_PORT"))
 
 	if os.Getenv("RPC_PORT") != "" {
