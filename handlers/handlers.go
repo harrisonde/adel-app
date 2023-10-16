@@ -3,7 +3,6 @@ package handlers
 import (
 	"myapp/data"
 	"net/http"
-	"strings"
 
 	"github.com/harrisonde/adel"
 )

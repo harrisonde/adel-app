@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"errors"
 	"myapp/cmd"
 	"myapp/data"
 	"myapp/handlers"
@@ -10,6 +10,7 @@ import (
 	"net/rpc"
 	"os"
 	"os/signal"
+	"strings"
 	"sync"
 	"syscall"
 
@@ -56,7 +57,7 @@ func (a *application) listenForShutdown() {
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	s := <-quit
-	a.App.InfoLog.Println("Received signal", s.String())
+	a.App.InfoLog.Println("received signal", s.String())
 	a.shutdown()
 
 	os.Exit(0)
