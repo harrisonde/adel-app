@@ -1,1 +1,1 @@
-# Adel skeleton application
+# Adele Skeleton Application

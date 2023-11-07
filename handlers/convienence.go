@@ -2,8 +2,10 @@ package handlers
 
 import (
 	"context"
+	"encoding/json"
 	"net/http"
 	"strings"
+	"time"
 
 	"github.com/harrisonde/adel"
 )
@@ -83,4 +85,25 @@ func (h *Handlers) decrypt(crypto string) (string, error) {
 		return "", err
 	}
 	return decrypted, nil
+}
+
+func (h *Handlers) HealthStatus(w http.ResponseWriter, r *http.Request) {
+	type PingStatus struct {
+		Time        time.Time `json:"time"`
+		Description string    `json:"description"`
+	}
+
+	res := PingStatus{
+		Time:        time.Now(),
+		Description: "server is running",
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+
+	jsonRes, err := json.Marshal(res)
+	if err != nil {
+		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+	}
+
+	w.Write(jsonRes)
 }

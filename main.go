@@ -33,8 +33,29 @@ func main() {
 	a := initApplication()
 	go a.listenForShutdown()
 	go a.listenRPC()
+	a.jobsSchedule()
 	err := a.App.ListenAndServe()
 	a.App.ErrorLog.Println(err)
+}
+
+/*
+|--------------------------------------------------------------------------
+| Scheduler
+|--------------------------------------------------------------------------
+|
+| Here is where you may add jobs to the scheduler. Any jobs added will be
+| called by the scheduler using the defined interval. You may use one of
+| several pre-defined schedules in place of a cron expression (i.e., @yearly,
+| @monthly, @weekly, @daily, @hourly and @every <duration>).
+|
+*/
+func (a *application) jobsSchedule() {
+
+	_, err := a.App.Scheduler.AddFunc("* * * * *", func() { a.Commands.RefreshGitHubToken() })
+
+	if err != nil {
+		a.App.ErrorLog.Println(err)
+	}
 }
 
 /*
