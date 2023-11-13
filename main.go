@@ -14,13 +14,13 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/harrisonde/adel"
+	"github.com/harrisonde/adele"
 )
 
 var maintenanceMode bool
 
 type application struct {
-	App        *adel.Adel
+	App        *adele.Adele
 	Handlers   *handlers.Handlers
 	Models     data.Models
 	Middleware *middleware.Middleware
@@ -129,7 +129,7 @@ func (a *application) listenRPC() {
 
 		s := new(RPCServer)
 
-		// Provide access to the Adel package
+		// Provide access to the Adele package
 		s.App = *a
 
 		err := rpc.Register(s)

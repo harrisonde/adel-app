@@ -3,10 +3,10 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/harrisonde/adel"
+	"github.com/harrisonde/adele"
 )
 
-var Command = &adel.Command{
+var Command = &adele.Command{
 	Name: "inspire",
 	Help: "displays an inspirational quote",
 }

@@ -7,11 +7,11 @@ import (
 
 	"github.com/fatih/color"
 	"github.com/go-chi/chi/v5"
-	"github.com/harrisonde/adel"
+	"github.com/harrisonde/adele"
 	"github.com/rodaine/table"
 )
 
-var RoutesCommand = &adel.Command{
+var RoutesCommand = &adele.Command{
 	Name: "route",
 	Help: "list all routes for the application",
 }

@@ -8,7 +8,7 @@ import (
 	"myapp/middleware"
 	"os"
 
-	"github.com/harrisonde/adel"
+	"github.com/harrisonde/adele"
 )
 
 func initApplication() *application {
@@ -17,8 +17,8 @@ func initApplication() *application {
 		log.Fatal(err)
 	}
 
-	// init Adel with reference to Adel
-	a := &adel.Adel{}
+	// init adele with reference to adele
+	a := &adele.Adele{}
 	err = a.New(path)
 	if err != nil {
 		log.Fatal(err)

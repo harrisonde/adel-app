@@ -5,12 +5,12 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/harrisonde/adel"
-	"github.com/harrisonde/adel/cmd"
+	"github.com/harrisonde/adele"
+	"github.com/harrisonde/adele/cmd"
 )
 
 type Commands struct {
-	App *adel.Adel
+	App *adele.Adele
 }
 
 var wg sync.WaitGroup

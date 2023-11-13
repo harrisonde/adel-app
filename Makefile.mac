@@ -1,4 +1,4 @@
-BINARY_NAME=adelApp
+BINARY_NAME=adeleApp
 
 build:
 	@go mod vendor

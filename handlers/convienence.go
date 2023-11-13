@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/harrisonde/adel"
+	"github.com/harrisonde/adele"
 )
 
 func (h *Handlers) render(w http.ResponseWriter, r *http.Request, template string, variables, data interface{}) error {
@@ -68,7 +68,7 @@ func (h *Handlers) isAlphaAnd(s, r string) bool {
 }
 
 func (h *Handlers) encrypt(text string) (string, error) {
-	enc := adel.Encryption{Key: []byte(h.App.EncryptionKey)}
+	enc := adele.Encryption{Key: []byte(h.App.EncryptionKey)}
 
 	encrypted, err := enc.Encrypt(text)
 	if err != nil {
@@ -78,7 +78,7 @@ func (h *Handlers) encrypt(text string) (string, error) {
 }
 
 func (h *Handlers) decrypt(crypto string) (string, error) {
-	enc := adel.Encryption{Key: []byte(h.App.EncryptionKey)}
+	enc := adele.Encryption{Key: []byte(h.App.EncryptionKey)}
 
 	decrypted, err := enc.Decrypt(crypto)
 	if err != nil {

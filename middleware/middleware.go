@@ -3,10 +3,10 @@ package middleware
 import (
 	"myapp/data"
 
-	"github.com/harrisonde/adel"
+	"github.com/harrisonde/adele"
 )
 
 type Middleware struct {
-	App    *adel.Adel
+	App    *adele.Adele
 	Models data.Models
 }
