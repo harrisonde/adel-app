@@ -2,6 +2,8 @@ module myapp
 
 go 1.20
 
+replace github.com/harrisonde/adel => github.com/harrisonde/adel-framework v0.0.4
+
 require (
 	github.com/CloudyKit/jet/v6 v6.2.0
 	github.com/go-chi/chi/v5 v5.0.8
