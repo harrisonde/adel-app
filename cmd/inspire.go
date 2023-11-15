@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/harrisonde/adele"
+	"github.com/harrisonde/adele-framework"
 )
 
 var Command = &adele.Command{

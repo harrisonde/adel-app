@@ -4,11 +4,11 @@ import (
 	"myapp/data"
 	"net/http"
 
-	"github.com/harrisonde/adel"
+	"github.com/harrisonde/adele-framework"
 )
 
 type Handlers struct {
-	App    *adel.Adel
+	App    *adele.Adele
 	Models data.Models
 }
 

@@ -8,7 +8,7 @@ import (
 	"myapp/middleware"
 	"os"
 
-	"github.com/harrisonde/adele"
+	"github.com/harrisonde/adele-framework"
 )
 
 func initApplication() *application {

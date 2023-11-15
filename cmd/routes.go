@@ -7,7 +7,7 @@ import (
 
 	"github.com/fatih/color"
 	"github.com/go-chi/chi/v5"
-	"github.com/harrisonde/adele"
+	"github.com/harrisonde/adele-framework"
 	"github.com/rodaine/table"
 )
 

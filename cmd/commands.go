@@ -5,8 +5,8 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/harrisonde/adele"
-	"github.com/harrisonde/adele/cmd"
+	"github.com/harrisonde/adele-framework"
+	"github.com/harrisonde/adele-framework/cmd"
 )
 
 type Commands struct {

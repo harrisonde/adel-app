@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/harrisonde/adele"
+	"github.com/harrisonde/adele-framework"
 )
 
 func (h *Handlers) render(w http.ResponseWriter, r *http.Request, template string, variables, data interface{}) error {
