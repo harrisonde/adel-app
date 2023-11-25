@@ -51,11 +51,7 @@ func main() {
 */
 func (a *application) jobsSchedule() {
 
-	_, err := a.App.Scheduler.AddFunc("* * * * *", func() { a.Commands.RefreshGitHubToken() })
-
-	if err != nil {
-		a.App.ErrorLog.Println(err)
-	}
+	.
 }
 
 /*

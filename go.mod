@@ -5,7 +5,7 @@ go 1.20
 require (
 	github.com/CloudyKit/jet/v6 v6.2.0
 	github.com/go-chi/chi/v5 v5.0.8
-	github.com/harrisonde/adele-framework v0.0.4
+	github.com/harrisonde/adele-framework v0.0.5
 	github.com/upper/db/v4 v4.6.0
 )
 
