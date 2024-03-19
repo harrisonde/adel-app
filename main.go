@@ -14,7 +14,7 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/harrisonde/adele-framework"
+	"git.int.86labs.cloud/harrisonde/adele-framework"
 )
 
 var maintenanceMode bool

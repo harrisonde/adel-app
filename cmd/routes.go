@@ -5,9 +5,9 @@ import (
 	"reflect"
 	"runtime"
 
+	"git.int.86labs.cloud/harrisonde/adele-framework"
 	"github.com/fatih/color"
 	"github.com/go-chi/chi/v5"
-	"github.com/harrisonde/adele-framework"
 	"github.com/rodaine/table"
 )
 

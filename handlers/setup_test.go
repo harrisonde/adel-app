@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
+	"git.int.86labs.cloud/harrisonde/adel"
+	"git.int.86labs.cloud/harrisonde/adel/mailer"
+	"git.int.86labs.cloud/harrisonde/adel/render"
 	"github.com/CloudyKit/jet/v6"
 	"github.com/alexedwards/scs/v2"
 	"github.com/go-chi/chi/v5"
-	"github.com/harrisonde/adel"
-	"github.com/harrisonde/adel/mailer"
-	"github.com/harrisonde/adel/render"
 )
 
 var adl adel.Adel

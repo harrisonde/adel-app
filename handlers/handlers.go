@@ -4,7 +4,7 @@ import (
 	"myapp/data"
 	"net/http"
 
-	"github.com/harrisonde/adele-framework"
+	"git.int.86labs.cloud/harrisonde/adele-framework"
 )
 
 type Handlers struct {
